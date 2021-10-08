@@ -16,6 +16,10 @@ class Pies:
         ludzkie_lata = int(self.wiek*7)
         print('kodi mialby', ludzkie_lata, 'lat')
     
+    def chodzenie(self):
+        print(self.imie, 'i jego opiekun', 'idą na spacer') 
+    
+    
     def __str__(self):        # __str__ tworzy lancuch do wyswietlenia przez funkcje print
         return 'Jestem psem o imieniu ' + self.imie
 
@@ -32,9 +36,7 @@ class PiesTowarzyszacy(Pies): # deklarujemy podklasę PiesTowarzyszacy, ktora be
             Pies.szczekanie(self)        # razie pies szczeka
 
 
-    def chodzenie(self):
-        print(self.imie, 'i jego opiekun', self.opiekun, 'idą na spacer') 
-    # tworzymy nowa metode chodzenie, która przyjmuje atrybuty z klas Pies oraz PiesTowarzyszacy
+   
 
 class Frisbee:        # tworzymy nowa klase psa, który aportuje frisbee ( niczego nie dziedziczy)
     def __init__(self, kolor): # ma okreslony tylko kolor a ponizej metode str
@@ -43,9 +45,10 @@ class Frisbee:        # tworzymy nowa klase psa, który aportuje frisbee ( nicze
     def __str__(self):    # __str__ okresla tekst zwracany przez print
         return 'Jestem Frisbee i mam kolor ' + self.kolor    
 
-class PiesAportujacy(Pies):  # nowa klasa PiesAportujacy dziedziczy po klasie Pies
+class PiesAportujacy(PiesTowarzyszacy):  # nowa klasa PiesAportujacy dziedzyczy po klasie Pies
     def __init__(self, imie, wiek, waga):
         Pies.__init__(self, imie, wiek, waga)
+        
         self.frisbee = None  # mamy kontruktor definiujacy atrybut frisbee. Frisbee jest innym obiektem (agregacja)
 
     def szczekanie(self):
@@ -72,7 +75,7 @@ class PiesAportujacy(Pies):  # nowa klasa PiesAportujacy dziedziczy po klasie Pi
         if self.frisbee != None:
             print(self.imie, ' Nie moge isc bo mam frisbee')
         else:                   # w przeciwnym wypadku wywolana zostaje metoda chodzenie nadklasy Pies i pies
-            PiesTowarzyszacy.chodzenie(self) # robi to samo co obiekty klasy PiesAportujacy
+            PiesTowarzyszacy.chodzenie(self) # robi to samo co obiekty klasy Pies i Piestowarzyszacy
 
     def __str__(self):       # metoda str warunkowo zwraca lancuhc w zaleznosci od tego czy pies ma frisbee
         str = "Jestem psem o imieniu " + self.imie
@@ -81,16 +84,16 @@ class PiesAportujacy(Pies):  # nowa klasa PiesAportujacy dziedziczy po klasie Pi
         return str
 
 def kod_testowy():  # funkcja ogolna 
-    drab = PiesAportujacy('Drab', 5, 20)
+    drab = PiesAportujacy('Drab', 5, 20)        # tworzymy psa z klasy PiesAportujacy i obiekt Frisbee
     niebieskie_frisbee = Frisbee('niebieski')
 
-    print(drab)
+    print(drab)                     # wyswietlamy psa i kazemy mu szczekac a nastepnie zlapac frisbee
     drab.szczekanie()
     drab.lapanie(niebieskie_frisbee)
-    drab.szczekanie()
-    print(drab)
+    drab.szczekanie()           # kazemy mu szczekac gdy ma w pysku frisbee
+    print(drab)                 # wyswietlamy psa (ktory ma frisbee)  i kazemy mu je zwrocic
     frisbee = drab.zwracanie()
-    print(frisbee)
+    print(frisbee)           # wyswietlamy zwrocone frisbee i ponownie wyswietlamy psa
     print(drab)
-    
+    drab.chodzenie()     
 kod_testowy()
