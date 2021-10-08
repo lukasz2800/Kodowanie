@@ -1,3 +1,6 @@
+from typing import ItemsView
+
+
 class Pies:
       
     def __init__(self, imie, wiek, waga):  # __init__ to konstruktor
@@ -45,7 +48,7 @@ class Frisbee:        # tworzymy nowa klase psa, który aportuje frisbee ( nicze
     def __str__(self):    # __str__ okresla tekst zwracany przez print
         return 'Jestem Frisbee i mam kolor ' + self.kolor    
 
-class PiesAportujacy(PiesTowarzyszacy):  # nowa klasa PiesAportujacy dziedzyczy po klasie Pies
+class PiesAportujacy(Pies):  # nowa klasa PiesAportujacy dziedzyczy po klasie Pies
     def __init__(self, imie, wiek, waga):
         Pies.__init__(self, imie, wiek, waga)
         
@@ -83,17 +86,61 @@ class PiesAportujacy(PiesTowarzyszacy):  # nowa klasa PiesAportujacy dziedzyczy 
             str = str + ' i mam frisbee'
         return str
 
-def kod_testowy():  # funkcja ogolna 
-    drab = PiesAportujacy('Drab', 5, 20)        # tworzymy psa z klasy PiesAportujacy i obiekt Frisbee
-    niebieskie_frisbee = Frisbee('niebieski')
+class Hotel:
+    def __init__(self, nazwa): # przy zainstancjonowaniu klasy hotel nadamy obiektowi nazwe Hotel dla Psiakow
+        self.nazwa = nazwa
+        self.buda_imiona = []  # uzyjemy dwoch list (jedna - imiona psow, druga - odpowiadajace im obiekty Pies)
+        self.buda_psy = []
+    
+    def zameldowanie(self, pies):         # tworzymy metode meldujaca psy w hotelu, przyjmuje ona obiekt PIES!
+        if isinstance(pies, Pies):         # sprawdzamy czy obiekt to Pies, inne sa niedozwolone
+            self.buda_imiona.append(pies.imie)  # przy zameldowaniu dodajemy imie psa i obiekt Pies do 
+            self.buda_psy.append(pies)           # odpowiednich list
+            print(pies.imie, 'zameldowal sie w', self.nazwa)  # pies zameldowal sie w hotelu(nazwa)
+        else:
+            print('Przykro nam', self.nazwa, 'przyjmuje tylko psy a nie Kicie')  #hotel(nazwa) przyjmuje tylko "obiekty" nalezące do Pies
+    
+    def wymeldowanie(self, imie):  # aby wymeldowac psa z hotelu musimy podac jego imie
+        for i in range(0, len(self.buda_imiona)):  # sprawdzamy czy pies jest w budzie
+            if imie == self.buda_imiona[i]:
+                pies = self.buda_psy[i]  
+                del self.buda_imiona[i]             # a jesli jest to pobieramy obiekt Pies z listy a nastepnie
+                del self.buda_psy[i]                # usuwamy imie oraz obiekt z list buda
+                print(pies.imie, 'wymeldowal sie z', self.nazwa)
+                return pies                          # na koniec zwracamy obiekt Pies
+        print('Przykro nam, ', imie, 'nie jest juz zameldowany w ', self.nazwa)
+        return None  # jesli pies nie znajduje sie w budzie zwracamy to zdanie
 
-    print(drab)                     # wyswietlamy psa i kazemy mu szczekac a nastepnie zlapac frisbee
-    drab.szczekanie()
-    drab.lapanie(niebieskie_frisbee)
-    drab.szczekanie()           # kazemy mu szczekac gdy ma w pysku frisbee
-    print(drab)                 # wyswietlamy psa (ktory ma frisbee)  i kazemy mu je zwrocic
-    frisbee = drab.zwracanie()
-    print(frisbee)           # wyswietlamy zwrocone frisbee i ponownie wyswietlamy psa
-    print(drab)
-    drab.chodzenie()     
+class Kot:
+    def __init__(self, imie):
+        self.imie = imie
+
+    def miau(self):
+        print(self.imie, 'robi MIAU MIAU')
+
+
+
+
+def kod_testowy():  # funkcja ogolna 
+    kodi = Pies('Kodi', 12, 18)           # utworzylismy zbior psow roznego rodzaju(klas): Pies, PiesAportujacy, PiesTowarzyszacy
+    fafik = Pies('Fafik', 9, 6)
+    azor = Pies('Azor', 2, 4)  
+    rufus = PiesTowarzyszacy('Rufus', 8, 20, 'Jan')
+    drab = PiesAportujacy('Drab', 5, 20)
+    kicia = Kot('Kicia')                   # sprawdzamy czy wpuszcza nasza Kicie
+    hotel = Hotel('Hotel dla Psiakow')
+    hotel.zameldowanie(kodi)
+    hotel.zameldowanie(fafik)                   # tworzymy hotel i sprawdzamy zwierzeta
+    hotel.zameldowanie(rufus)
+    hotel.zameldowanie(drab)
+    hotel.zameldowanie(kicia)
+    pies = hotel.wymeldowanie(kodi.imie)   # wymeldowujemy i sprawdzamy wszystkie psy
+    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
+    pies = hotel.wymeldowanie(fafik.imie)
+    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
+    pies = hotel.wymeldowanie(rufus.imie)
+    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
+    pies = hotel.wymeldowanie(drab.imie)
+    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
+    pies = hotel.wymeldowanie(azor.imie)  # popducha na Azora(ktory nie byl zameldowany)
 kod_testowy()
