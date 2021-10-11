@@ -115,7 +115,19 @@ class Hotel:
         for imie_psa in self.buda:             # przejdz po imionach wszystkich psow
             pies = self.buda[imie_psa]         # i uzyj jako kluczy do pobrania obiektow Pies
             pies.szczekanie()                  # polecenie szczekania
+    
+    def zatrudnienie_wyprowadzacza(self, wyprowadzacz):
+        if isinstance(wyprowadzacz, WyprowadzaczPsow): # sprawdzamy czy obiekt nalezy do klasy WyprowadzaczPsow, jesli tak to 
+            self.wyprowadzacz = wyprowadzacz           # zatrudniamy go dodajac go jako atrybut
+        else:
+            print(wyprowadzacz.imie, ' nie jest wyprowadzaczem psow')
+    
 
+    def usluga_wyprowadzania(self):  # w metodzie usluga wyprowadzania sprawdzamy czy atrybut wyprowadzacz jest ustawiony
+        if self.wyprowadzacz != None:  #jesli tak polecamy wyprowadzaczowi wyprowadzenie psow
+            self.wyprowadzacz.wyprowadzanie_psow(self.buda) # 
+                 
+            
 class Kot:          # dajemy tez Kicie dla zmylki systemu
     def __init__(self, imie):
         self.imie = imie
@@ -123,30 +135,39 @@ class Kot:          # dajemy tez Kicie dla zmylki systemu
     def miau(self):
         print(self.imie, 'robi MIAU MIAU')
 
+class Osoba:
+    def __init__(self, imie):
+        self.imie = imie 
+    
+    def __str__(self):
+        return 'Jestem osoba i mam na imie', self.imie
 
+class WyprowadzaczPsow(Osoba):
+    def __init__(self, imie):
+        Osoba.__init__(self, imie) # dziala tak samo jak Osoba ale ma dodatkowa metode wyprowadzanie_psow
 
+    def wyprowadzanie_psow(self, psy):
+        for imie_psa in psy:             # iterujemy po psach i wywolujemy chodzenie
+            psy[imie_psa].chodzenie()
 
 def kod_testowy():  # funkcja ogolna 
     kodi = Pies('Kodi', 12, 18)           # utworzylismy zbior psow roznego rodzaju(klas): Pies, PiesAportujacy, PiesTowarzyszacy
     fafik = Pies('Fafik', 9, 6)
     azor = Pies('Azor', 2, 4)  
     rufus = PiesTowarzyszacy('Rufus', 8, 20, 'Jan')
-    drab = PiesAportujacy('Drab', 5, 20)
-    kicia = Kot('Kicia')                   # sprawdzamy czy wpuszcza nasza Kicie
-    hotel = Hotel('Hotel dla Psiakow')
+  
+    drab = Pies('Drab', 5, 20)
+
+    hotel = Hotel('Hotel dla psiakow')
     hotel.zameldowanie(kodi)
-    hotel.zameldowanie(fafik)                   # tworzymy hotel i sprawdzamy zwierzeta
+    hotel.zameldowanie(fafik)
     hotel.zameldowanie(rufus)
     hotel.zameldowanie(drab)
-    hotel.zameldowanie(kicia)
-    hotel.pora_szczekania()     # wszystkie psy z kazdej klasy maja metode szczekanie dlatego moga korzystac z pora_szczekania
-    pies = hotel.wymeldowanie(kodi.imie)   # wymeldowujemy i sprawdzamy wszystkie psy
-    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
-    pies = hotel.wymeldowanie(fafik.imie)
-    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
-    pies = hotel.wymeldowanie(rufus.imie)
-    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
-    pies = hotel.wymeldowanie(drab.imie)
-    print('Wymeldowal sie', pies.imie + ', ktory ma', pies.wiek, 'lat i wazy', pies.waga, 'kg')
-    pies = hotel.wymeldowanie(azor.imie)  # popducha na Azora(ktory nie byl zameldowany)
+
+    jacek = WyprowadzaczPsow('Jacek')
+    hotel.zatrudnienie_wyprowadzacza(jacek)
+
+    hotel.usluga_wyprowadzania()
+
+
 kod_testowy()
