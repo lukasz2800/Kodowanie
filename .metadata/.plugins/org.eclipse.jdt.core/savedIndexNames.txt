@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\lukasz.dyrda\Repos\Python\.metadata\.plugins\org.eclipse.jdt.core
+1339585743.index
+1865797976.index
+3341551241.index

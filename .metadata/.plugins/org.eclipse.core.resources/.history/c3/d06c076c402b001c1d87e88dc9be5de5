@@ -1,0 +1,18 @@
+package programowanie;
+
+public class PiosenkaOPiwie {
+
+	public static void main(String[] args) {
+		int iloscButelek = 99;
+		String slowo = "bottles";
+		while (iloscButelek > 0); { // dopoki ilosc butelek jest wieksza niz 0
+			if (iloscButelek == 1); {
+				slowo = "bottle";   //liczba pojedyncza jak zostanie ostatnia butelka
+			}
+			System.out.println(iloscButelek + " " + slowo + " beer on the wall")
+		}
+		
+
+	}
+
+}

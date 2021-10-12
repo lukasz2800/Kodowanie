@@ -1,0 +1,10 @@
+package programowanie;
+
+public class Helloworld {       // klasa Helloworld
+
+	public static void main(String[] args) {    // definicja metody
+		System.out.println("Hello world!");     // instrukcja print
+
+	}
+
+}
