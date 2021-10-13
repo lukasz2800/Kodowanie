@@ -1,0 +1,18 @@
+package programowanie;
+
+public class Krasomowca {
+
+	public static void main(String[] args) {
+		String[] listaSlow1 = {"architektura wielowarstwowa", "3000 metrow", "rozwiazanie", "szesc sigma"};
+		String[] listaSlow2 = {"zwieksza mozliwosci", "poprawia atrakcyjnosc", "rozproszona", "sieciowa"};
+		String[] listaSlow3 = {"procesu", "punktu wpisywania", "portalu", "witryny"};
+		
+		int lista1Dlugosc = listaSlow1.length;
+		int lista2Dlugosc = listaSlow2.length;
+		int lista3Dlugosc = listaSlow3.length;
+		
+		
+
+	}
+
+}
