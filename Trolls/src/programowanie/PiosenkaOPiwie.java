@@ -1,25 +1,28 @@
 package programowanie;
 
 public class PiosenkaOPiwie {
-
+	int iloscButelek;
+	int x = iloscButelek;
+	
 	public static void main(String[] args) {
-		int iloscButelek = 4;
+		int x = 5;		
 		String slowo = "bottles";
+		String jedna = "bottle";
 		
-		if (iloscButelek > 0); { // dopoki ilosc butelek jest wieksza niz 0
-			{
-			System.out.println(iloscButelek + " " + slowo + " of beer on the wall");
-			System.out.println(iloscButelek + " " + slowo + " of beer");
+		while (x > 1) {                   // dopoki ilosc butelek jest wieksza niz 0			
+			System.out.println(x + " " + slowo + " of beer on the wall");
+			System.out.println(x + " " + slowo + " of beer");
 			System.out.println("Take one down.");
 			System.out.println("Pass it around.");
-			iloscButelek = iloscButelek - 1;
-			if (iloscButelek < 0) {
-				System.out.println(iloscButelek + slowo + " of beer on the wall");
-			}	else {
-				System.out.println("No more beer on the wall");
-				
-			}  // koniec else			
-		}  // koniec while
-	}  // koniec metody
-}  // koniec klasy
+			x = x - 1;
+		if (x < 2) {
+			System.out.println(x + " " +  jedna + " on the wall");
+			x = x - 1;
+		}
+		
+		if (x < 1) {
+		System.out.println("No more beer on the wall");	
+		}	 			
+		}	 
+	}  
 }

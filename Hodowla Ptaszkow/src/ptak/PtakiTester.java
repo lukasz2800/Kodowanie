@@ -11,7 +11,7 @@ public class PtakiTester {
 		a.wielkosc = 5;
 		a.waga = 2;
 		a.kolor = "czerwony";
-		a.jajko = "Znoszê jajka";
+		a.jajko = "znoszê jajka";
 		a.zycie = "Ameryka Po³udniowa";
 		a.iloscjajek = 1;
 		
@@ -27,7 +27,7 @@ public class PtakiTester {
 		b.wielkosc = 25;
 		b.waga = 20;
 		b.kolor = "bialy";
-		b.jajko = "Znoszê jajka";
+		b.jajko = "znoszê jajka";
 		b.zycie = "Polska";
 		b.iloscjajek = 0;
 		

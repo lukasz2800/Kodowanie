@@ -32,7 +32,7 @@ public class Ptaki {
 		else if (wielkosc < 20 && wielkosc > 10) {			/// wielkosc < 20 oraz wielkosc > 10 (&& = oraz)	
 			System.out.println("Jestem przecietniakiem");
 		}	
-		else if (wielkosc < 10) {
+		else {
 			System.out.println("Jestem maluszkiem");
 		}
 	}
