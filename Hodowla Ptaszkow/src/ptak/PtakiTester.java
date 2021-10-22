@@ -20,6 +20,7 @@ public class PtakiTester {
 		a.gdziemieszkasz();
 		a.podajkolor();
 		a.podajwielkosc();
+		a.wazymy();
 		System.out.println(" ");
 		
 		b.gatunek = "Czapla szara";
@@ -38,7 +39,7 @@ public class PtakiTester {
 		b.kolor = "czarny";   // przeciazenie metody podajkolor
 		b.podajkolor();
 		b.podajwielkosc();
-		
+		b.wazymy();
 		
 	}
 }

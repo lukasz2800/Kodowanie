@@ -36,4 +36,13 @@ public class Ptaki {
 			System.out.println("Jestem maluszkiem");
 		}
 	}
+	void wazymy() {
+		if (waga < 10) {
+			System.out.println("Jestem " + imie + " i wa¿ê ma³o bo " + waga + " kg");
+		}
+		else {
+			System.out.println("Jestem " + imie + " i waze duzo bo " + waga + "kg");
+	}
+
+	}
 }
