@@ -8,7 +8,7 @@ public class MyFrame extends JFrame {
 	
 	public void Myframe() {
 		
-		super("Hello world")
+		super("Hello world");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);

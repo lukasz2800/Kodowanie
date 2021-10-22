@@ -10,6 +10,7 @@ public class Test {
 			
 			public void run()	{
 				new MyFrame();
+				
 			}
 		
 		});
