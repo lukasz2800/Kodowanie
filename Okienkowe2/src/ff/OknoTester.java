@@ -7,6 +7,8 @@ public class OknoTester {
 		Okno ok = new Okno();
 		ok.setVisible(true);
 		
+		
+		
 	}
 
 }
