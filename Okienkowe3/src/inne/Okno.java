@@ -66,6 +66,8 @@ public class Okno extends JFrame implements ActionListener	{
 
 	
 	public void actionPerformed(ActionEvent e) {
+		
+	
 		if	(e.getSource() == bWez)	{             // obsluga klikniecia przycisku "Wez dane"
 			try {
 				int wiek = Integer.parseInt(tWiek.getText());
