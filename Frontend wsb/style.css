@@ -1,0 +1,12 @@
+
+/* selektor (typu) odnosi sie do paragrafow */
+p   {
+    color: green;
+
+}
+
+/* selektor uniwersalny> */ 
+*   {
+
+    font-size: 30px;
+}
