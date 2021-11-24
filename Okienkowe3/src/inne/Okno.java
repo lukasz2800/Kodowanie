@@ -21,7 +21,7 @@ public class Okno extends JFrame implements ActionListener	{
 	
 	Okno()	{                        // konstruktor okna
 		setSize(260, 200);
-		setTitle("2 przyciski demo");
+		setTitle("2 przyciski de	mo");
 		setLocation(100, 100);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
