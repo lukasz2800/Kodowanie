@@ -1,0 +1,15 @@
+1. Stwórz podstawową strukturę HTML.
+2. w sekcji body umieść 3 łącza z klasą o dowolnej nazwie
+3. W wartościach atrybutów href umieść #, natomiast wewnątrz znacznika a wpisz odpowiednio przycisk 1, przycisk 2 i przycisk 3
+3. Zaimportuj dowolny bezszeryfowy font z google fonts i użyj go do swoich przycisków
+4. użyj selektora klasy do stylowania
+5. Ostyluj przycisk w następujący sposób:
+- "wyłącz" podkreślenie
+- ustaw przyski tak, aby można było kontrolować ich wielkość, ale równocześnie, aby były ustawione obok siebie
+- określ stałą szerokość przycisków na 260px tak, aby zmiana właściwości padding i border nie wpływała na powiększanie elementów
+- zmień kolor tła na czarny
+- ustaw wielkość tekstu na 24px, i kolor na pomarańczowy
+- wyświetl tekst wielkimi literami i wyśrodkuj go
+- ustaw wewnętrzny margines na 20px z góry i z dołu oraz na 30px z prawej i z lewej strony
+- ustaw border górny i dolny na 3px, linię ciągłą i kolor pomarańczowy
+- ustaw zewnętrzny margines na 20px z góry i z dołu oraz na 5px z prawej i z lewej strony 
