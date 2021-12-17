@@ -1,0 +1,50 @@
+$mobileColor: rgb(250, 100, 19);
+$tabletColor: rgb(76, 20, 230);
+$laptopColor: #fefadcff;
+$desktopColor: rgb(241, 59, 166);
+$ebony: #3f612dff;
+
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  body {
+    font-size: 36px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+    .container {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: $ebony;
+    }
+
+    @media screen and (max-width: $desktop) {
+      .container {
+        background-color: $desktopColor;
+      }
+    }
+    @media screen and (max-width: $laptop) {
+      .container {
+        background-color: $laptopColor;
+      }
+    }
+    @media screen and (max-width: $tablet) {
+      .container {
+        background-color: $tabletColor;
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      .container {
+        background-color: $mobileColor;
+      }
+    }
+  }
+}

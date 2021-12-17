@@ -26,7 +26,7 @@ public class Pudelko implements Serializable	{   // samo dodanie interfejsu Seri
 			ObjectOutputStream os = new ObjectOutputStream(fs);  // Tworzymy strumieñ ObjectOutputStream po³¹czone ze strumieniem FileOutputStream
 			os.writeObject(mojePudelko);						// nastepnie nakazujemy zapisac obiekt w strumieniu
 			os.close();
-		}	catch (Exception ex) {
+		}	catch (Exception ex) {                       // utworzylismy nowy plik pudelko.ser ( jest ok)
 			ex.printStackTrace();
 		}
 	}
