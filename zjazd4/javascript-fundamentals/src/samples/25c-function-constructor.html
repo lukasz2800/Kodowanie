@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Function constructor
+    function Invoice(number, items) {
+      this.number = number;
+      this.items = items;
+      this.print = function () {
+        console.log("Printing...");
+      };
+    }
+
+    let inv1 = new Invoice(1, ["Phone", "TV"]);
+    let inv2 = new Invoice(2, ["Phone", "Console"]);
+    let inv3 = new Invoice(3, ["Console"]);
+
+  </script>
+</body>
+
+</html>

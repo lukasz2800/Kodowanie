@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      // 1. Wyświetl wszystkie właściwości obiektu `book` używając `Object.keys()`
+
+      const book = {
+        isbn: "978-1-56619-909-4",
+        title: "ISBN-13 barcode",
+        author: "Unknown"
+      }
+
+      console.log(Object.keys(book))
+
+      // 2. Dodaj metodę `toString` do obiektu `book`, która zwraca wszystkie właściwości obiektu jako jeden łańcuch.
+
+      book.toString = function() {
+        return this.isbn + ', ' + this.title + ", " + this.author;
+      }
+
+      console.log(book.toString()); // test nowej metody
+
+      // 3. Zmień właściwość `title' i nadaj jej nową, dowolną wartość.
+
+      book.title = "New Title";
+
+      console.log(book.toString()) // test
+
+      // 4. Utwórz klon obiektu book i zapisz go do nowej zmiennej bookClone. 
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+      const bookClone = Object.assign({}, book);
+
+      console.log(book);
+      console.log(bookClone);
+
+    </script>
+  </body>
+</html>

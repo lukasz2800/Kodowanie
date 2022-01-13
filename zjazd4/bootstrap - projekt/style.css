@@ -1,0 +1,38 @@
+header {
+  background-image: url("https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  padding: 20px;
+  background-color: rgba(179, 171, 171, 0.527);
+  color: black;
+  text-align: center;
+}
+
+header a {
+  display: block;
+  padding: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  width: 180px;
+  background-color: rgba(179, 171, 171, 0.527);
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}

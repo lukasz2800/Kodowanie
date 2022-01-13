@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Demo</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+  <button id="btn">Click me!</button>
+
+  <script type="application/javascript">
+
+    window.onload = function (event) {
+      console.log(event.constructor);
+      console.dir(event);
+      console.log("Loaded ...");
+    };
+
+    document.querySelector("#btn").addEventListener('click', event => {
+      console.log(event.constructor);
+      console.dir(event);
+      console.log("Button clicked ...");
+    });
+
+  </script>
+</body>
+
+</html>

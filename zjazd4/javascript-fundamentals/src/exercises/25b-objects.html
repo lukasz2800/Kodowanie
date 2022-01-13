@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      /*
+
+        Employee.
+
+        > TODO
+
+        Używając składni `object literal` utwórz nowy obiekt "employee" posiadający:
+        - właściwości:  "name", "department", "salary", "previousSalary"
+        - metody:
+            - "increaseSalaryBy" - która procentowo zwiększa wynagrodzenie pracownika i zapamiętuje "previousSalary"
+            - "toString" - która zwraca reprezentację tekstową obiektu (wszystkie właściwości)
+
+      */
+
+      // TODO
+      const employee = {
+        
+      };
+
+      // Testowanie obiektu
+      console.log("Employee before salary rise: " + employee.toString());
+      // Przykładowa odpowiedź: "Employee before salary rise: John Doe, IT, salary=1000 (previously=900)"
+      employee.increaseSalaryBy(0.1); // 10%
+      console.log("Employee after salary rise: " + employee.toString());
+      // Przykładowa odpowiedź: "Employee before salary rise: John Doe, IT, salary=1100 (previously=1000)"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Przekazywanie przez referencję
+    const object1 = {
+      name: "object1",
+    };
+
+    console.log("Before: " + object1);
+
+    const modifiesObject = function (obj) {
+      object1.name = "Modified";
+    };
+
+    modifiesObject(object1);
+    console.log("After: " + object1);
+
+    // Tworzenie kopii obiektu
+    const orig = { a: 1, b: 2, c: 3, func: () => console.log("Func!") };
+    const copy = Object.assign({}, orig);
+
+    console.log(orig);
+    console.log(copy);
+
+    // Porównywanie obiektów
+    const o4 = { name: "Demo" };
+    const o5 = { name: "Demo" };
+    const compare1 = o4 === o5; // false
+
+    // Tablica jest obiektem
+    const modifiesArray = function (arr) {
+      arr.push("42");
+    };
+    const arr1 = ["one", "two", "three"];
+    modifiesArray(arr1);
+    console.log(arr1) // oryginalna tablica została zmodyfikowana.
+    console.log(typeof arr1);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      /* 
+    
+        Walidacja wieku.
+
+        Wyświetlenie różnego tekstu w zależności od wartości liczby.
+        
+        > TODO
+
+        - Użyj funkcji `prompt()` do pobrania liczby od użytkownika
+        - Skonwertuj tekst wprowadzony przez użytkownika do liczby z użyciem `parseInt()`
+        - Użyj `if` z operator mniejszości lub większości weryfikacji podanego wieku
+        - Użyj funkcji `alert()` do pokazania wyniku użytkownikowi i, gdy wiek jest:
+          - większy lub równy od 18 lat wyśwetl: "Jesteś pełnoletni"
+          - mniejszy od 18 lat wyświetl: "Jesteś niepełnoletni"
+
+        > Pytania
+
+        - Jak zachowa się program, gdy użytkownik poda wartość "12abc"?
+        - Jak zachowa się program, gdy użytkownik poda wartość "xyz"?
+      */
+
+      const input = prompt("Ile masz lat?"); // stała input zawiera wartość podaną przez użytkownika
+      const age = parseInt(input);
+
+      if (age < 18) {
+        alert("Jesteś niepełnoletni") 
+      } else {
+        alert("Jesteś pełnoletni") 
+      }
+      
+    </script>
+  </body>
+</html>

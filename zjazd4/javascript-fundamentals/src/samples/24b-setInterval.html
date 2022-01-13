@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // nigdy się nie zatrzyma (do zakończenia skryptu)
+    setInterval(function () {
+      console.log("I am the robot, but I never stop!");
+    }, 500); // nigdy się nie zatrzyma!
+
+    // zatrzyma się po ok. 10 sek
+    let counter = 10;
+    const intervalId = setInterval(function () {
+      console.log(
+        "I am the robot, but I will stop in " + counter + " seconds!"
+      );
+      if (--counter == 0) {
+        clearInterval(intervalId);
+        console.log("I stopped!");
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>

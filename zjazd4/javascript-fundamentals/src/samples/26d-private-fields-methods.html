@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    class AClass {
+
+      #privateField1;
+      #privateField2;
+
+      constructor() {
+        this.#privateField1 = "Demo"
+        this.#privateField2 = "42"
+      }
+
+      #privateMethod() {
+        console.log(this.#privateField1 + " " + this.#privateField2);
+      }
+
+      publicMethod() {
+        this.#privateMethod()
+      }
+
+    }
+
+    const obj1 = new AClass();
+    obj1.publicMethod();
+
+  </script>
+</body>
+
+</html>

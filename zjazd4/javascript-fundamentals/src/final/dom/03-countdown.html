@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>Countdown</h1>
+    <label for="duration">Duration (s)</label>
+    <input type="number" value="10" name="duration" id="duration" />
+    <br />
+    <br />
+    <input type="button" value="Start" onclick="start()" id="start" />
+    <input type="button" value="Stop" onclick="stop()" id="stop" disabled />
+    <p id="log"></p>
+
+    <script type="application/javascript">
+      /*
+        
+        Countdown.
+
+        Odliczanie od podanej wartości do zera.
+
+        Wartość licznika wyświetlana jest w paragrafie o id='log':
+
+        > TODO
+
+        - Funkcja `start` rozpoczyna odliczanie (w interwale) i aktualizuje wartość licznika, aktualizuje również stan przycisków `start` i `stop`.
+        - Funkcja `stop` resetuje odliczanie oraz utworzony interwał, aktualizuje również stan przycisków `start` i `stop`.
+
+        Do rozwiązania zadania konieczne jest wykorzystanie funkcji `setInterval()`
+
+      */
+
+      const log = document.querySelector("#log");
+      const startButton = document.querySelector("#start");
+      const stopButton = document.querySelector("#stop");
+
+      let intervalId = null;
+
+      function start() {
+        let duration = parseInt(document.querySelector("#duration").value);
+
+        log.textContent = duration + "";
+        startButton.disabled = true;
+        stopButton.disabled = false;
+
+        intervalId = setInterval(() => {
+          if (duration !== 0) {
+            log.textContent = --duration + "";
+          }
+        }, 1000);
+      };
+
+      function stop() {
+        clearInterval(intervalId);
+        startButton.disabled = false;
+        stopButton.disabled = true;
+      };
+    </script>
+  </body>
+</html>

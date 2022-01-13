@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Funkcja jako argument innej funkcji
+    function myFunc1(x, y, func) {
+      const result = func(x, y);
+      return result;
+    }
+
+    const sumFunction = function (x, y) {
+      return x + y;
+    };
+    const myFunc1Result = myFunc1(1, 2, sumFunction);
+
+    // Funkcja jako argument innej funkcji - wywołanie z anonimową funkcją
+    const myFunc1Result = myFunc1(1, 2, function (x, y) {
+      return x + y;
+    });
+  </script>
+</body>
+
+</html>

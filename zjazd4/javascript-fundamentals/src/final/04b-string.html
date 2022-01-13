@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <section>
+    <h1>Form</h1>
+
+    <form method="get">
+      <label for="first">First name:</label>
+      <input type="text" name="first" id="first">
+      <label for="last">Last name:</label>
+      <input type="text" name="last" id="last">
+      <input type="button" value="Submit" onClick="calculate()">
+    </form>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <div id="result"></div>
+  </section>
+
+  <script type="application/javascript">
+
+    /*
+      TODO Popraw skrypt w taki sposób, aby zmienna `fullName` zawierała znak spacji
+      pomiędzy imieniem a nazwiskiem.
+    */
+
+    function calculate() {
+      let first = document.querySelector("#first").value;
+      let last = document.querySelector("#last").value;
+
+      let fullName = first + " " +  last;
+
+      document.querySelector("#result").textContent = fullName
+    }
+  </script>
+</body>
+
+</html>

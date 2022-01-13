@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Demo</title>
+  <meta charset="utf-8" />
+  <style>
+    #box-1 {
+      border: 1px dashed gray;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">DOM Demo</h1>
+
+  <div>
+    <label for="text">Text</label>
+    <input type="text" id="text" value="Demo Box">
+  </div>
+
+  <div>
+    <label for="color">Text color</label>
+    <input type="color" id="color">
+  </div>
+
+  <div>
+    <label for="font-size"></label>
+    <input type="number" id="font-size" value="14">px
+  </div>
+
+  <p id="box-1">
+    Demo Box
+  </p>
+
+
+  <script type="application/javascript">
+    const box = document.querySelector('#box-1')
+    
+    const textInput = document.querySelector("#text");
+    textInput.addEventListener("keyup", event => {
+      box.textContent = event.target.value;
+    });
+
+    const colorInput = document.querySelector("#color");
+    colorInput.addEventListener("change", event => {
+      box.style.color = event.target.value;
+    });
+
+    const fontSizeInput = document.querySelector("#font-size");
+    fontSizeInput.addEventListener("change", event => {
+      console.log(box.style);
+      box.style.fontSize = event.target.value + "px";
+    })
+
+  </script>
+</body>
+
+</html>

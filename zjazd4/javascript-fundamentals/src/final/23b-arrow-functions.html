@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      
+      const formatString = function (string, formatFunction) {
+        return formatFunction(string);
+      };
+
+      // TODO Wywołaj funkcję `formatString` trzykrotnie podając jako argument funkcję formatującą
+      // 1 - funkcja formatująca zamienia łańcuch na wielkie litery
+      // 2 - funkcja formatująca zamienia łańcuch na małe litery
+      // 3 - funkcja formatująca dodaje na początku i na końcu łańcucha "!"
+
+      // Każda z funkcji poniżej akceptuje 1 argument typu "string" i zwraca zmodyfikowany "string"
+
+      const toUpperCaseFunc = (str) => str.toUpperCase() // TODO
+      const toLowerCaseFunc = (str) => str.toLowerCase() // TODO
+      const wrapWithExlamationMark = (str) => '!' + str + '!' // TODO
+
+      const result1 = formatString("Lorem ipsum", toUpperCaseFunc);
+      console.log(result1);
+      
+      const result2 = formatString("Lorem ipsum", toLowerCaseFunc);
+      console.log(result2);
+      
+      const result3 = formatString("Lorem ipsum", wrapWithExlamationMark);
+      console.log(result3);
+      
+    </script>
+  </body>
+</html>

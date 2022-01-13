@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      /*
+
+        > TODO
+
+        Napisz funkcję `test(string, testFunction)`, gdzie:
+        
+        - `string` to dowolny ciąg znaków
+        - `testFunction` to funkcja, która oczekuje łańcucha znaków i zwraca dowolną wartość
+
+        Funkcja powinna zwracać rezultat wykonania funkcji `testFunction`.
+
+      */
+
+      const test = function (string, testFunction) {
+        return testFunction(string);
+      };
+
+      // TODO Wywołaj `test` przekazując jako parametr funkcję `testFunction1`
+      const testFunction1 = function (str) {
+        return "The len of the string is: " + str.length;
+      };
+      let testResult1 = test("abc", testFunction1);
+      console.log(testResult1);
+
+      // TODO Wywołaj `test` przekazując jako parametr funkcję `testFunction2`
+      const testFunction2 = function (str) {
+        return "This is a string: " + str;
+      };
+      let testResult2 = test("abc", testFunction1);
+      console.log(testResult2);
+
+      // TODO Wywołaj `test` przekazując jako parametr funkcję anonimową, zadeklarowaną podczas wywołania. Funkcja ta zwraca `string.toUpperCase()`.
+      let testResult3 = test("abc", function (string) {
+        return string.toUpperCase();
+      });
+      console.log(testResult3);
+
+      // TODO Wywołaj `test` przekazując jako parametr funkcję anonimową, zadeklarowaną podczas wywołania. Funkcja ta zwraca `string.toLowerCase()`.
+      let testResult4 = test("abc", function (string) {
+        return string.toLowerCase();
+      });
+      console.log(testResult4);
+    </script>
+  </body>
+</html>

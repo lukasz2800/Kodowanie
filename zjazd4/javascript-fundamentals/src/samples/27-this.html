@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // `this` - wskazuje na inny obiekt w zależności od tego jak funkcja jest wywoływana (runtime)
+
+    console.info(this); // Window
+
+    function this1() {
+      console.log("Global" + this);
+    }
+    this1(); // Window
+
+    let this2 = function () {
+      console.log(this);
+    };
+    this2(); // Window
+
+    // Object Literal
+    let this3 = {
+      name: "This3",
+      method: function (str) { // metoda to funkcja w obiekcie, do której dostajemy się za pomocą notacji kropki (obj.method())
+        this.name = str;
+        console.log(this);
+      },
+    };
+
+    this3.method("New name"); // this = this3
+
+    // call, apply
+    // call i apply różnią się sposobem wywoalania
+
+    const obj1 = { a: "This is Obj 1" };
+    const obj2 = { a: "This is Obj 2" };
+
+    function whatsThis() {
+      console.log("What's this? " + this.a); // Wartość zależy od kontekstu wywołania funkcji
+    }
+
+    whatsThis(); // undefined, `window.a` nie jest zdefiniowana
+
+    whatsThis.call(obj1); // "This is Obj 1"
+    whatsThis.apply(obj1); // "This is Obj 1"
+
+    whatsThis.call(obj2); // "This is Obj 2"
+    whatsThis.apply(obj2); // "This is Obj 2"
+
+    // bind
+
+    function bindMe() {
+      console.log("Bound to? " + this.a);
+    }
+
+    const newBindMe1 = bindMe.bind(obj1); // kopia funkcji
+    newBindMe1();
+
+    const newBindMe2 = bindMe.bind(obj2); // kopia funkcji
+    newBindMe2();
+
+    // Arrow functions - wartość `this` pochodzi z kontekstu, w którym funkcja została wywołana
+    const arrowFunc1 = () => {
+      console.log(this);
+    };
+    arrowFunc1(); // window
+
+    const anObject1 = {
+      aFunc: arrowFunc1,
+    };
+    anObject1.aFunc(); // window
+
+    const anObject2 = {
+      aFunc: () => {
+        console.log(this);
+      },
+    };
+    anObject2.aFunc(); // window - funkcja została wywołana z kontekstu głównego
+
+    const anObject3 = {
+      me: "anObject3",
+      aFunc() {
+        return () => {
+          console.log(this);
+        };
+      },
+    };
+    anObject3.aFunc()(); // anObject3 - funkcja została wywołana z kontekstu obiektu `anObject3`
+
+    // kontekst wywołania
+    const anObject4 = {
+      aFunc: function () {
+        console.log(this);
+      },
+    };
+    const myNewFunc = anObject4.aFunc;
+    myNewFunc(); // kontekst wywołania jest globalny, zatem `this` to window!
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Demo</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h1 id="title">DOM Demo</h1>
+
+  <h2>This is cool demo</h2>
+
+  <p class="my-para" style="color: red;">
+  <div>Line 1</div>
+  <div>Line 2</div>
+  <div>Line 2</div>
+  </p>
+
+  <ul id="my-links">
+    <li><a href="https://link1.com">Link 1</a></li>
+    <li><a href="https://link2.com">Link 2</a></li>
+    <li><a href="https://link3.com">Link 3</a></li>
+  </ul>
+
+  <script type="application/javascript">
+
+    // Odnajdowanie elementów po ID
+    const h1 = document.getElementById("title");
+    console.dir(h1);
+    console.dir(h1.innerHTML)
+    console.dir(h1.innerText)
+
+    // Query selector
+    const p = document.querySelector(".my-para");
+    console.dir(p) // element - object
+    console.dir(p.innerText) // Tekst elementu
+    console.dir(p.children) // Wszystkie dzieci
+    console.dir(p.className) // klasa
+    console.dir(p.getAttribute("class")) // pobranie atrybutu
+    console.dir(p.style) // style - object
+    console.dir(p.style.color) // color
+    console.dir(p.getAttribute("style"))
+
+    // Query selector all
+    const ul = document.querySelector("#my-links")
+    const lis = ul.querySelectorAll("li")
+
+    for (const li of lis) {
+      console.dir(li.firstChild.getAttribute("href"));
+    }
+
+  </script>
+</body>
+
+</html>

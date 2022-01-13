@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Deklarowanie łańcuchów znaków
+    let str1 = "String 1";
+    let str2 = 'String 2';
+    let strWithQuotes = 'A "string"';
+    let strWithSingleQuotes = "A 'string'";
+    let multiLineStr1 = "Line 1\
+        Line 2\
+        Line 3";
+
+    // Template Literals (ES6)
+    let str3 = `String 3`;
+    let str4 = `String 4: ${str1}, ${str2}`;
+    let multiLineStr2 = `
+          Line 1
+          Line 2
+          Line 3
+      `;
+
+    // Escape characters
+    let esc1 = 'Escape "quotes"';
+    let special1 = 'Tab: "Escape!"';
+    let special2 = "Tab: \t, New line: \n";
+
+    // Długość łańcucha znaków
+    let len = special2.length;
+
+    // Łączenie łańcuchów (konkatenacja)
+    let str5 = `${str1} ${str2} ${str3}`;
+    let str6 = str1 + " " + str2 + " " + str3;
+  </script>
+</body>
+
+</html>

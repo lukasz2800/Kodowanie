@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // `length` - długość łańcucha
+    const str0 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str0.length);
+
+    // `charAt` - znajdź pozycję znaku w łańcuchu
+    const str1 = "The quick brown fox jumps over the lazy dog.";
+    const index1 = 4;
+    console.log(`The character at index ${index1} is ${str1.charAt(index1)}`);
+
+    // `slice` - usuń znaki z łańcucha
+    const str2 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str2.slice(31)); // expected output: "the lazy dog."
+    console.log(str2.slice(4, 19)); // expected output: "quick brown fox"
+    console.log(str2.slice(-4)); // expected output: "dog."
+    console.log(str2.slice(-9, -5)); // expected output: "lazy"
+
+    // `substring` - zwróć fragment łańcucha
+    const str3 = "Mozilla";
+    console.log(str3.substring(1, 3)); // expected output: "oz"
+    console.log(str3.substring(2)); // expected output: "zilla"
+
+    // `toUpperCase` - skonwertuj łańcuch do wielkich liter
+    const str4 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str4.toUpperCase());
+
+    // `toLowerCase` - skonwertuj łańcuch do małych liter
+    const str5 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str5.toLowerCase());
+
+    // `includes` - zweryfikuj, czy łańcuch zawiera inny łańcuch
+    const str6 = "The quick brown fox jumps over the lazy dog.";
+    const word = "fox";
+
+    console.log(
+      `The word "${word}" ${str6.includes(word) ? "is" : "is not"
+      } in the sentence`
+    );
+
+    // `replace` - zamień występowanie znaków na inny (tylko pierwsze wystąpienie)
+    const str7 =
+      "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
+    console.log(str7.replace("dog", "DOOM!"));
+
+    // `replaceAll` - zamień występowanie znaków na inny (wszystkie wystąpienia)
+    const str8 =
+      "The quick brown fox jumps over the lazy dog. And the dog reacted, was it really lazy?";
+    console.log(str8.replaceAll("dog", "DOOM!"));
+
+    // `split` - utwórz tablicę z łańcucha znaków
+    const str9 = "The quick brown fox jumps over the lazy dog.";
+    const words = str9.split(" "); // rezultatem jest tablica
+    console.log(words[3]);
+
+    // `trim` - usuń znaki białe z początku i końca łańcucha
+    const str10 = "   Hello JavaScript!   ";
+    console.log(str10);
+    console.log(str10.trim());
+
+    // `startsWith` - zweryfikuj, czy łańcuch zaczyna się innym łańcuchem
+    const str11 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str11.startsWith("The quick"));
+
+    // `endsWith` - zweryfikuj, czy łańcuch zaczyna się innym łańcuchem
+    const str12 = "The quick brown fox jumps over the lazy dog.";
+    console.log(str12.endsWith("lazy dog."));
+
+  </script>
+</body>
+
+</html>

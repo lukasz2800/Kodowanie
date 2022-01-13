@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Wywołaj przekazaną funkcję po określonym czasie
+    setTimeout(function () {
+      console.log("Here!");
+    }, 3000);
+
+    setTimeout(function () {
+      console.log("Me first!");
+    }, 500);
+
+    // Usuwanie timeoutu
+    const timeoutId = setTimeout(function () {
+      // funkcja nie wywoła się, ponieważ wcześniej timeout zostanie usunięty
+      console.log("Here, again!");
+    }, 3000);
+
+    clearTimeout(timeoutId);
+
+    // Przykład z arrow function
+    setTimeout(() => console.log("I am the Arrow!"), 1000);
+  </script>
+</body>
+
+</html>

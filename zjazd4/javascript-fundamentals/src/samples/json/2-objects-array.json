@@ -1,0 +1,18 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 32,
+    "manager": true
+  },
+  {
+    "firstName": "Anna",
+    "lastName": "Smith",
+    "age": 42,
+    "manager": false
+  },
+  {
+    "firstName": "Peter",
+    "lastName": "Jones"
+  }
+]

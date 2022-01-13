@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Porównania
+
+    let x1 = 10;
+    let x2 = 11;
+    let x3 = x1 > x2 || (x1 < x2 && x1 > 0 && x2 < 100);
+
+    // Zaprzeczenie (not)
+    let notTrue = !true;
+    let notFalse = !false;
+
+    // Istnienie zmiennych
+
+    let v1;
+    if (v1) {
+      // false
+      console.log("v1");
+    }
+
+    let v2 = null;
+    if (v2) {
+      // false
+      console.log("v2");
+    }
+
+    let v3 = "test1";
+    if (v3) {
+      // true
+      console.log("v3");
+    }
+
+    let v4 = 0; // true
+    if (v4 || v4 === 0) {
+      console.log("v4");
+    }
+
+    let v5; // true
+    if (v5 === undefined) {
+      console.log("v5");
+    }
+
+    let v6 = null; // true
+    if (v6 == null) {
+      console.log("v6");
+    }
+
+    let v7; // false
+    if (v7 === null) {
+      console.log("v7");
+    }
+
+    let v8 = null; // true
+    if (v8 === null) {
+      console.log("v8");
+    }
+  </script>
+</body>
+
+</html>

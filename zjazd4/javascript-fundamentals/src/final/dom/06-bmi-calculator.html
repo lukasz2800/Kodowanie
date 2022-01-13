@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample</title>
+    <style>
+      #bmi-form label,
+      input {
+        display: inline-block;
+        width: 150px;
+      }
+
+      #bmi-form div {
+        margin-top: 10px;
+      }
+
+      p#result {
+        margin: 25px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BMI Calculator</h1>
+    <form id="bmi-form" onsubmit="onSubmit(event)">
+      <div>
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" value="70" />
+      </div>
+      <div>
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" name="height" value="169" />
+      </div>
+      <div>
+        <input type="submit" value="Calculate" />
+      </div>
+    </form>
+    <p id="result"></p>
+    <script type="application/javascript">
+      /*
+      
+        BMI Calculator.
+
+        > Algorytm BMI:
+        
+        BMI = weight (kg) ÷ height^2 (m)
+
+        > Rezultat:
+
+        bmi                   -> meaning
+        "less than 15"        -> "very severely underweight"
+        "between 15 and 16"   -> "severely underweight"
+        "between 16 and 18.5" -> "underweight"
+        "between 18.5 and 25" -> "normal"
+        "between 25 and 30"   -> "overweight"
+        "between 30 and 35"   -> "moderately obese"
+        "between 35 and 40"   -> "severely obese"
+        "over 40"             -> "very severely obese"
+
+        > Komunikat dla użytkownika wyświetlany w paragrafie o id='result':
+
+        'Your BMI is 40 so you are very severely obese'
+
+        > TODO
+
+        - Funkcja `calculate` oblicza wartość BMI (`bmi`) i zwraca go razem ze opisem (`meaning`) jako objekt.
+        - Funkcja `onSubmit` pobiera dane od użytkownika, oblicza BMI oraz wyświetla rezultat.
+      */
+
+      const calculate = (weight, height) => {
+        // BMI = weight (kg) ÷ height^2 (m)
+        const bmi = weight / Math.pow(height / 100, 2);
+        let meaning;
+
+        if (bmi < 15) {
+          meaning = "very severely underweight";
+        } else if (bmi > 15 && bmi <= 16) {
+          meaning = "severely underweight";
+        } else if (bmi > 16 && bmi <= 18.5) {
+          meaning = "underweight";
+        } else if (bmi > 18.5 && bmi <= 25) {
+          meaning = "normal";
+        } else if (bmi > 25 && bmi <= 30) {
+          meaning = "overweight";
+        } else if (bmi > 30 && bmi <= 35) {
+          meaning = "moderately obese";
+        } else if (bmi > 35 && bmi <= 40) {
+          meaning = "severely obese";
+        } else if (bmi > 40) {
+          meaning = "very severely obese";
+        }
+
+        return {
+          bmi: bmi.toFixed(2), // 2 miejsca po przecinku
+          meaning: meaning,
+        };
+      };
+
+      const onSubmit = (event) => {
+        event.preventDefault();
+
+        const weight = parseFloat(document.getElementById("weight").value);
+        const height = parseFloat(document.getElementById("height").value);
+
+        const { bmi, meaning } = calculate(weight, height);
+
+        const result = document.querySelector("#result");
+        result.textContent = `Your BMI is ${bmi} so you are ${meaning}`;
+      };
+    </script>
+  </body>
+</html>

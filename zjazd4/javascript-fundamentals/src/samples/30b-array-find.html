@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    const basket = [
+      { product: "Coffee", price: 10 },
+      { product: "Tea", price: 12 },
+      { product: "Shirt", price: 25 },
+      { product: "Pen", price: 6 },
+      { product: "Shirt", price: 10 },
+    ];
+
+    // znajdź pierwsze wystąpienie elementu spełniającego warunek
+    const found = basket.find((item) => item.product.startsWith("S")); // znajduje pierwszy element spełniający warunek
+    console.log(found);
+  </script>
+</body>
+
+</html>

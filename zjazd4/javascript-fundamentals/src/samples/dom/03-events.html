@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h1>Events Demo</h1>
+
+  <form id="form">
+    <label>Text field: <input type="text" onkeydown="textInputOnKeyDown(event)" /></label>
+    <br /><br />
+    <label>Password field: <input type="password" /></label>
+    <br /><br />
+    <button type="submit">Submit form</button>
+  </form>
+  <p id="log"></p>
+
+  <script type="application/javascript">
+    const log = document.querySelector("#log");
+
+    const textInput = document.querySelector("input[type=text]");
+
+    // rejestracja obsługi zdarzenia
+    textInput.addEventListener("keypress", (event) => {
+      log.innerText = "Key press: " + event.target.value;
+    });
+
+    // rejestracja obsługi zdarzenia poprzez atrybut w deklaracji elementu
+    const textInputOnKeyDown = (event) => {
+      log.innerText = "Key down: " + event.target.value;
+    };
+
+    // rejestracja obsługi zdarzenia poprzez właściwość elementu
+    textInput.onkeyup = (event) => {
+      log.innerText = "Key up: " + event.target.value;
+    };
+
+    const passwordInput = document.querySelector("input[type=password]");
+    passwordInput.addEventListener("focus", (event) => {
+      event.target.style.background = "pink";
+    });
+
+    passwordInput.addEventListener("blur", (event) => {
+      event.target.style.background = "";
+    });
+
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // nie wykonuj oryginalnej akcji
+      log.innerText = `Form submitted: ${textInput.value}, ${passwordInput.value}`;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    // TODO Zmierz czas wykonania funkcji w milisekundach
+    // - Użyj methody Date.now() to zapisania aktualnego czasu w milisekundach
+    // - Wykonaj odpowiednią kalkulację i wyświetl wynik w konsoli
+
+    function longRunningOperation() {
+      const randomInt = Math.floor(Math.random() * 1000000000);
+      for (let i = 0; i < randomInt; i++) { }
+    }
+
+    const startTime = 0; // TODO
+
+    longRunningOperation()
+
+    const endTime = 0; // TODO
+
+    const runningTimeInMilliseconds = 0; // TODO
+    console.log("Running time: " + runningTimeInMilliseconds + " ms");
+
+  </script>
+</body>
+
+</html>

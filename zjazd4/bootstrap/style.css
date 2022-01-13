@@ -1,0 +1,23 @@
+.blue {
+  border: 5px solid blue;
+}
+
+.green {
+  border: 5px solid green;
+  margin-top: 5px;
+}
+
+.col {
+  background-color: rgb(43, 159, 226);
+  border: 1px solid black;
+}
+
+.phone {
+  margin-top: 10px;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+}

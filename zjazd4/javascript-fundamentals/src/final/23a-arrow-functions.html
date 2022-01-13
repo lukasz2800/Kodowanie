@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    // TODO Zamień poniższe funkcje "klasyczne" na funkcje strzałkowe
+
+    // 1
+
+    const log = msg => console.log(msg);
+
+    log("Demo");
+
+    // 2 
+
+    const add = (x, y) => x + y;
+
+    log(add(10, 20))
+
+    // 3
+
+    const toUpperCase = (str) => str.toUpperCase();
+
+    log(toUpperCase("Demo"));
+
+    // 4 - skonwertuj tylko wewnętrzne funkcje, zwracane w wyrażeniu switch
+
+    function calc(operator) {
+      switch (operator) {
+        case "+":
+          return (x, y) => x + y;
+        case "-":
+          return (x, y) => x - y;
+        case "*":
+          return (x, y) => x * y;
+        case "/":
+          return (x, y) => x / y;
+        case "**":
+          return (x, y) => x ** y;
+        default:
+          return (x, y) =>undefined;
+      }
+    }
+
+    log(calc("+")(5, 2))
+    log(calc("-")(5, 2))
+    log(calc("*")(5, 2))
+    log(calc("/")(5, 2))
+    log(calc("**")(5, 2))
+    log(calc("?")(5, 2))
+
+  </script>
+</body>
+
+</html>

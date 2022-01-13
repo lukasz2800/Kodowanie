@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Demo</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+  <div id="div">
+    Demo
+  </div>
+
+  <input type="text" id="input" />
+
+  <a id="anchor" href="//google.com"></a>
+
+  <script type="application/javascript">
+
+    const div = document.getElementById("div")
+    console.log(div.constructor);
+    console.dir(div);
+
+    const input = document.getElementById("input")
+    console.log(input.constructor);
+    console.dir(input);
+
+    const anchor = document.getElementById("anchor")
+    console.log(anchor.constructor);
+    console.dir(anchor);
+
+  </script>
+</body>
+
+</html>

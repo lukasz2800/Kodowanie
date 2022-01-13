@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Demo</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h1 id="title">DOM Demo</h1>
+
+  <button id="btn">Add new list item</button>
+
+  <ul id="list">
+
+  </ul>
+
+  <script type="application/javascript">
+
+    let index = 1;
+    const button = document.querySelector("#btn");
+
+    button.addEventListener('click', event => {
+
+      const list = document.querySelector("#list");
+
+      // utwórz nowy element li
+      const li = document.createElement("li");
+      li.innerText = 'List item ' + index;
+
+      // zarejetruj na elemencie obsługę zdarzenia
+      li.addEventListener('dblclick', event => {
+        // usuń "siebie" z z listy
+        list.removeChild(event.target)
+      })
+
+      // dodaj nowy element jako dziecko do listy
+      list.appendChild(li);
+
+      index++;
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script type="application/javascript">
+
+        // 1 - TODO Sklonuj obiekt employee używając metod obiektu JSON.
+
+        const employee = {
+            name: "John Doe",
+            department: "IT",
+            salary: 1000
+        };
+
+        // TODO
+        const employeeClone = JSON.parse(JSON.stringify(employee)); // TODO
+
+        console.log(employeeClone);
+
+        // 2 - TODO Zapisz łańcuch zwrócony z http://api.icndb.com/jokes/random do obiektu `joke`.
+        // Wyświetl treść żartu w konsoli.
+
+        const jokeJson = `
+            { "type": "success", "value": { "id": 30, "joke": "Someone once tried to tell Chuck Norris that roundhouse kicks aren't the best way to kick someone. This has been recorded by historians as the worst mistake anyone has ever made.", "categories": [] } }
+        `;
+
+        const joke = JSON.parse(jokeJson); // TODO
+        console.log(joke.value.joke); // TODO
+
+    </script>
+</body>
+
+</html>

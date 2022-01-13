@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    function myFunc1(x) {
+      if (x === 1) {
+        throw 'Error, x === 1'; // "rzuć" wyjątek
+      }
+    }
+
+    function myFunc2() {
+      try {
+        myFunc1(0) // bez wyjątku
+        myFunc1(1) // wyjątek
+      } catch (error) {
+        // przechwycenie wyjątku i jego obsługa
+        console.log("This is an error: " + error)
+      }
+    }
+
+
+    function myFunc3() {
+      myFunc1(1) // wyjątek
+      myFunc1(0) // bez wyjątku - kod się nie wykona przez wyjątek z poprzedniej funkcji
+    }
+
+    myFunc2();
+    myFunc3();
+
+    /*
+    Konsola:
+
+      20e-function-throw.html:13 Uncaught Error, x === 1
+      myFunc1 @ 20e-function-throw.html:13
+      myFunc3 @ 20e-function-throw.html:29
+      (anonymous) @ 20e-function-throw.html:34
+      
+    */
+
+
+  </script>
+</body>
+
+</html>

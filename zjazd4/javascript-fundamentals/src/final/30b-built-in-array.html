@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    // TODO Napisz funkcję, która połączy obie tablice przekazane jako argumenty
+    //
+    // - Upewnij się, że oba argumenty funkcji to tablice
+    // - Użyj pętli for..of oraz metody Array.prototype.push()
+    // - Tablica wynikowa musi być nową tablicą (nie modyfikuj argumentów)
+    //
+    // Jakich metod użyć?
+    //
+    // - `Array.isArray()`
+    // - `Array.from()`
+    // - `Array.prototype.push()`
+    //
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+    function merge(array1, array2) {
+      if (!Array.isArray(array1) || !Array.isArray(array2)) {
+        return null;
+      }
+
+      const result = Array.from(array1)
+      for (const el of array2) {
+        result.push(el)
+      }
+
+      return result;
+    }
+
+    // testowanie funkcji
+    console.log(merge([1, 2], [3, 4]));
+    console.log(merge(["a", "b"], ["c", "d"]));
+
+  </script>
+</body>
+
+</html>

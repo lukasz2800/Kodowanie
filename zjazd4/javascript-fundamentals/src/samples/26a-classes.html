@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // Deklaracja klasy
+    class Shape {
+
+      constructor(id, x, y) {
+        this.id = id;
+        this.move(x, y);
+      }
+
+      move(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+    }
+
+    // Tworzenie instacji klasy (obiekt)
+    const shape1 = new Shape(10, 1, 2); // w trakcie tworzenia wywoływany jest konstruktor klasy
+
+    // Dostęp do właściwości i metod (notacja kropki)
+    let x = shape1.x;
+    let y = shape1.y;
+
+    console.log(`x = ${shape1.x}, y = ${shape1.y}`);
+
+    // Wywołanie metody
+    shape1.move(11, 12);
+
+    console.log(`x = ${shape1.x}, y = ${shape1.y}`);
+
+  </script>
+</body>
+
+</html>

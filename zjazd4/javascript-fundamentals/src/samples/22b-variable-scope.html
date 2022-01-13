@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    //
+    // Zmienne globalne
+    //
+
+    let globalVariable1 = 42;
+
+    function func1() {
+
+      console.log(globalVariable1);
+
+      for (let i = 0; i < 10; i++) { // blok
+
+        console.log(globalVariable1);
+
+        if (i === 0) { // blok
+          console.log(globalVariable1);
+        }
+
+      }
+
+      // zmienne globalne mogą być modyfikowane globalnie
+      globalVariable1 = 13;
+    }
+
+    //
+    // Zmienne lokalne funkcji
+    //
+
+    function func2() {
+
+      let localVariable1 = "L1";
+
+      for (let i = 0; i < 10; i++) { // blok
+
+        let localVariable2 = "L2";
+
+        console.log(localVariable1);
+
+        if (i === 0) { // blok
+
+          let localVariable3 = "L3";
+
+          console.log(localVariable1);
+          console.log(localVariable3);
+        }
+
+        // console.log(localVariable3); // zmienna nie jest poza blokiem, w którym została zadeklarowana
+
+      }
+
+      // console.log(i); // zmienna nie jest poza blokiem, w którym została zadeklarowana
+      // console.log(localVariable3); // zmienna nie jest poza blokiem, w którym została zadeklarowana
+
+    }
+  </script>
+</body>
+
+</html>

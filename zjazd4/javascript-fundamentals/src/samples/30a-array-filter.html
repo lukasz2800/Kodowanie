@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    const basket = [
+      { product: "Coffee", price: 10 },
+      { product: "Tea", price: 12 },
+      { product: "Shirt", price: 25 },
+      { product: "Pen", price: 6 },
+      { product: "Shirt", price: 10 },
+    ];
+
+    const moreExpensiveThan10 = basket.filter((item) => product.price >= 10);
+    console.log(moreExpensiveThan10);
+
+    const shirts = basket.filter((item) => item.product === "Shirt");
+    console.log(shirts);
+  </script>
+</body>
+
+</html>

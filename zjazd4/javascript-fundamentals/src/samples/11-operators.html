@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    // operatory arytmetyczne
+    let v1 = 10 + 10 - (10 / 2) * 3;
+    let v2 = v1 % 2;
+
+    // inkrementacja
+    let inc1 = 1;
+    let res1 = inc1++; // res1 = 1, inc1 = 2
+
+    let inc2 = 1;
+    let res2 = ++inc2; // res2 = 2, inc2 = 2
+
+    // dekrementacja
+    let dec1 = 1;
+    let res3 = dec1--; // res3 = 1, dec1 = 0
+
+    let dec2 = 1;
+    let res4 = --dec2; // res4 = 0, dec1 = 0
+
+    // wyrażenia używające wielu zmiennych i operatorów
+    let finalResult = res1 + res2 + res3 + ++res4;
+
+    // operatory przypisania
+    let x1 = 10;
+    x1 += 1; // x1 = 11
+    x1 -= 1; // x1 = 10
+    x1 *= 2; // x1 = 20
+    x1 /= 2; // x1 = 10
+    x1 %= 2; // x1 = 0
+
+    // konkatenacja stringów
+    let str1 = "abc" + "def"; // abcdef
+    let str2 = "ghi" + "";
+    let str3 = str1 + str2; // abcdefghi
+    let str4 = "";
+    str4 += str3; // // abcdefghi
+
+    // operatory porównania
+    let b1 = "0" == 0; // true
+    let b2 = "0" === 0; // false
+    let b3 = false == 0; // true
+    let b4 = false === 0; // false
+    let b5 = b4 == undefined; // false
+    let b6 = b5 == null; // false
+    let b7 = "test" === "test"; // true
+    let b8 = 10 > 11; // true
+    let b9 = 10 < 11; // false
+    let b10 = 10 >= 11; // true
+    let b11 = 10 <= 11; // false
+
+    // operatory logiczne
+    let b12 = b1 && b2; // false
+    let b13 = b1 && (b2 || b3); // false
+    let b14 = !b4; // true
+
+    // operator typeof
+    typeof "Text"; // string
+    typeof 2; // number
+    typeof NaN; // number
+    typeof false; // boolean
+    typeof null; // object
+
+    // instanceof
+    console.log(new Number(1) instanceof Number); // true
+
+    // delete
+    let obj1 = { key: "value" };
+    delete obj1.key;
+
+    // in
+    let obj2 = { key1: "value1", key2: "value2" };
+    for (key in obj2) {
+      console.log(key);
+    }
+  </script>
+</body>
+
+</html>

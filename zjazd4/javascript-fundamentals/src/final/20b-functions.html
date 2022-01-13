@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    /*
+  
+    > TODO  
+    
+    - Napisz funkcję `reverseArray(array)`, która zwróci tablicę w odwróconej kolejności.
+    - Funkcja jako argument przyjmować powinna tablicę, która zostanie odwrócona.
+    - Jeżeli argument wejściowy nie jest tablicą, funkcja zwraca pustą tablicę.
+    - Przetestuj działanie funkcji.
+
+    
+    Jak odwrócic tablicę?
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+
+    Jak zwrawdzić, czy argument jest tablicą?
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+
+    */
+
+    function reverseArray(array) {
+      if (!Array.isArray(array)) {
+        return [];
+      }
+      let reversed = [];
+      for (let i = 0, j = array.length - 1; i < array.length; i++, j--) {
+        reversed[j] = array[i];
+      }
+      return reversed;
+
+      // or :)
+      // return array.reverse()
+
+    };
+
+
+    // TODO Wykomentuj po utworzeniu funkcji w celu jej wywołania
+    let result1 = reverseArray(['1', '2', '3'])
+    console.log(result1);
+
+    let result2 = reverseArray(['3', '4', '5'])
+    console.log(result2);
+
+    let result3 = reverseArray(['a', 'b', 'c'])
+    console.log(result3);
+
+    let result4 = reverseArray(42)
+    console.log(result4);
+
+    let result5 = reverseArray(undefined)
+    console.log(result5);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 50%;
+            border: 5px solid green;
+            padding: 25px;
+            margin: 25px auto;
+        }
+        
+        p.box {
+            border-color: red;
+            margin: 0 auto;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        p.box-blue {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="box">
+        <button id="btn1" onclick="timeoutTest(this, event);">setTimeout</button>
+        <button id="btn2" onclick="intervalTest(this, event);">setInterval</button>
+    </p>
+
+
+    <div id="box1" class="box">
+
+        <p id="p1" class="box">P1</p>
+
+        <p id="p2" class="box">P2</p>
+
+    </div>
+
+    <script type="text/javascript">
+        // #btn1 => (1) Po 1s nadaj klasę box-blue elementowi #p1. (2) po kolejnej 1s usuń ja
+
+        // Tip: el.classList.add(name), el.classList.remove(name), el.classList.contains(name)
+        // Tip: setTimeout a w niej kolejny setTimeout
+    
+        const timeoutTest = function () {
+            setTimeout(function () {
+                let p1 = document.getElementById("p1");
+                p1.classList.add("box-blue");
+                setTimeout(function () {
+                    let p1 = document.getElementById("p1");
+                    p1.classList.remove("box-blue");
+                }, 1000);
+            }, 1000);
+        };
+        
+        // #btn2 => (1) Po 1-wszym kliknięciu "mrugaj" elementem #p2 nadajac / usuwajac klasę box-blue
+        //          (2) Po 2-kliknięciu zatrzymaj "animację" (window.clearInterval(id))
+        //
+        // Tips: el.classList.add(name), el.classList.remove(name), el.classList.contains(name)
+        
+        let intervalId = null; // wynik wywoalnia fukcji setInterval
+        
+        const intervalTest = function () {
+            let p2 = document.getElementById("p2");
+            if (intervalId == null) {
+                intervalId = setInterval(function() {
+                    if (p2.classList.contains("box-blue")) {
+                        p2.classList.remove("box-blue");
+                    } else {
+                        p2.classList.add("box-blue");
+                    }                    
+                }, 500);        
+            } else {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        };
+    </script>
+</body>
+
+</html>

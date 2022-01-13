@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample</title>
+    <style>
+      #typewriter {
+        margin: 25px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Typewriter</h1>
+    <label for="text">Text</label>
+    <input type="text" value="Some pretty long text..." name="text" id="text" />
+    <br />
+    <br />
+    <label for="speed">Speed (ms)</label>
+    <input type="number" value="100" name="speed" id="speed" />
+    <br />
+    <br />
+    <input type="button" value="Start" onclick="start()" id="start" />
+    <input type="button" value="Stop" onclick="stop()" id="stop" disabled />
+    <div id="typewriter"></div>
+
+    <script type="application/javascript">
+      /*
+        
+        Typewriter.
+
+        Symulacja pisania na klawiaturze poprzez wyświetlanie kolejnych znaków podanego tekstu.
+
+        Aktualny tekst wyświetlany jest w paragrafie o id='typewriter':
+
+        > TODO
+
+        - Funkcja `start` tworzy interwał, w którym wykonywane jest wypisywanie kolejnych znaków danego łańcucha.
+        - Funkcja `stop` resetuje wypisywanie tekstu.
+
+        Do rozwiązania zadania konieczne jest wykorzystanie funkcji `setInterval()`
+
+      */
+
+      const typewriter = document.querySelector("#typewriter");
+      const startButton = document.querySelector("#start");
+      const stopButton = document.querySelector("#stop");
+
+      let intervalId = null;
+
+      function start() {
+        typewriter.textContent = "";
+        startButton.disabled = true;
+        stopButton.disabled = false;
+
+        let text = document.getElementById("text").value;
+        let speed = parseInt(document.getElementById("speed").value);
+
+        let length = text.length;
+        let currentCharacter = 0;
+
+        intervalId = setInterval(() => {
+          if (currentCharacter === length) {
+            currentCharacter = 0;
+            typewriter.textContent = "";
+          }
+
+          if (currentCharacter < length) {
+            typewriter.textContent += text[currentCharacter] + "";
+            currentCharacter++;
+          }
+        }, speed);
+      };
+
+      function stop() {
+        clearInterval(intervalId);
+        startButton.disabled = false;
+        stopButton.disabled = true;
+      };
+    </script>
+  </body>
+</html>

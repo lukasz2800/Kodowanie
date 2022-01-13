@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+    const basket = [
+      { product: "Coffee", price: 10 },
+      { product: "Tea", price: 12 },
+      { product: "Shirt", price: 25 },
+      { product: "Pen", price: 6 },
+      { product: "Shirt", price: 10 },
+    ];
+
+    // mapowanie z jednej tablicy do innej (nowej)
+    const result = basket
+      .filter((item) => item.price > 10)
+      .map((item) => {
+        return { name: item.product, price: item.price.toFixed(2) };
+      });
+    console.log(result);
+  </script>
+</body>
+
+</html>

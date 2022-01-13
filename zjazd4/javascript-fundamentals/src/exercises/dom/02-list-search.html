@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <h1>List Search</h1>
+
+  <label for="search">Search:</label>
+  <input type="text" name="search" id="search">
+  <ul id="items">
+
+  </ul>
+
+  <script type="application/javascript">
+    /*
+
+      List search.
+
+      Wpisywanie wartości w polu wyszukiwania filtruje listę.
+      
+
+      > TODO
+      
+      - Po załadowaniu dokumentu (`window.onload`) wyświetl listę
+      - Zarejestruj obsługę zdarzenia `keyup` na polu tekstowym
+
+    */
+
+    const items = [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Sed nec mi hendrerit, vestibulum lorem nec, semper elit",
+      "Quisque imperdiet magna et lorem maximus bibendum non ut nibh",
+      "Phasellus ut leo id ipsum bibendum viverra"
+    ];
+
+
+    window.onload = event => {
+      // TODO Wywołaj `showItems()` przekazując jako argument pusty string
+    }
+
+    const searchInput = document.querySelector("#search");
+    searchInput.addEventListener('keyup', event => {
+      // TODO Wywołaj funkcję `showItems()` przekazując aktualną wartość pola tekstowego
+      // Wartość pola znajduje się we właściwości `event.target.value`
+    })
+
+
+    // TODO Zaimplementuj wyświetlane listy
+    // Jeżeli `searchTerm` nie jest pusty, wyświetl tylko te elementy, które zawierają `searchTerm`
+    // Pamiętaj o każdorazowym usunięciu elementów listy (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren)
+
+    function showItems(searchTerm) {
+
+      // TODO Zapisz listę `ul` do stałej
+
+      // TODO Wyczyść wszystkie elemeny `ul`
+
+      // Iteracja po elementach tablicy
+      for (const item of items) {
+        // TODO Jeżeli `searchTerm jest pusty lub element zawiera `searchTerm`:
+        // - utwórz nowy element listy
+        // - ustaw jego tekst
+        // - dodaj go jako dziecko do listy
+        
+      }
+    };
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script type="application/javascript">
+
+    const contact = {
+      firstname: "John",
+      lastname: "Doe",
+      age: 21,
+      fullName() {
+        return this.firstname + " " + this.lastname; // this
+      },
+      address: {
+        addressLine1: "Address Line 1",
+        addressLine2: "Address Line 1",
+      },
+      favMovies: [{ title: "Pulp Fiction" }, { title: "Kill Bill" }],
+    };
+
+    console.log(JSON.stringify(contact));
+
+    const jsonString = `
+        {
+          "employees": [
+            {
+              "firstName": "John",
+              "lastName": "Doe",
+              "age": 32,
+              "manager": true
+            },
+            {
+              "firstName": "Anna",
+              "lastName": "Smith",
+              "age": 42,
+              "manager": false
+            },
+            {
+              "firstName": "Peter",
+              "lastName": "Jones"
+            }
+          ]
+        }
+      `;
+
+    console.log(JSON.parse(jsonString));
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="application/javascript">
+      /*
+        > TODO
+
+        - Napisz funkcję `stringLen(string)`, która zwróci długość przekazanego łańcucha znaków.
+        - Jeżeli argument wejściowy nie jest typu "string", funkcja zwraca -1
+        - Przetestuj działanie funkcji.
+      */
+
+      const stringLen = function (string) {
+        if (typeof string !== "string") {
+          return -1;
+        }
+        return string.length;
+      };
+
+      // TODO Wykomentuj poniższy kod po utworzeniu funkcji w celu jej wywołania
+      console.log(stringLen("Oh gee!"));
+      console.log(stringLen("Good one!"));
+      console.log(stringLen("Ouch!"));
+      console.log(stringLen(NaN));
+      console.log(stringLen(undefined));
+      console.log(stringLen(10));
+    </script>
+  </body>
+</html>
